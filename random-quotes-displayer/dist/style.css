@@ -1,0 +1,91 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  vertical-align: baseline;
+}
+
+body {
+  background-color: #49b5c0;
+}
+
+body {
+  color: #333;
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#wrapper1 {
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+#wrapper1 #wrap {
+  display: flex;
+  background-color: #fff;
+  padding: 10px 20px 0px 20px;
+  height: auto;
+  width: 500px;
+}
+#wrapper1 #wrap .box1 {
+  padding: 0%;
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+  justify-content: center;
+}
+#wrapper1 #wrap #quote-box {
+  border-radius: 3px;
+  position: relative;
+  width: 450px;
+  padding: 40px 50px;
+  display: table;
+  background-color: #fff;
+}
+#wrapper1 #wrap #quote-box #quoteText {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 200;
+  margin-bottom: 30px;
+}
+#wrapper1 #wrap #quote-box #quoteAuthor {
+  text-align: right;
+  margin-bottom: 10px;
+}
+#wrapper1 #wrap #quote-box .btn {
+  border-radius: 3px;
+  font-size: 20px;
+  padding: 10px;
+  border: none;
+  background-color: #49b5c0;
+  color: white;
+  opacity: 1;
+}
+#wrapper1 #wrap #quote-box #new-quote {
+  width: 110px;
+  font-size: 15px;
+}
+#wrapper1 #wrap #quote-box .btn:hover {
+  opacity: 0.9;
+  /*   background-color: white; */
+}
+
+#author {
+  text-align: right;
+  margin-bottom: 20px;
+}
+
+#buttons1 {
+  padding: 0;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
