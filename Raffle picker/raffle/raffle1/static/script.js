@@ -60,10 +60,6 @@ function quote() {
   let rQuote = rmQuotes();
 
 
-  // $('#tweet-quote').attr(
-  // 'href',
-  // 'https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=' +
-
   $('#name').animate({ opacity: 0 }, 500, function () {
     $(this).animate({ opacity: 1 }, 8000);
     $('#name').text(rQuote.name);
