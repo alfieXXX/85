@@ -1,12 +1,12 @@
-// let data = [
-//   {name:"Lianza, Alfie Romeo",lokal:"Nivel Hills"},
-//   {name:"Lianza, Alfie Romeo2",lokal:"Nivel Hills2"},
-//   {name:"Lianza, Alfie Romeo3",lokal:"Nivel Hills3"},
-//   {name:"Lianza, Alfie Romeo4",lokal:"Nivel Hills4"},
-//   {name:"Lianza, Alfie Romeo5",lokal:"Nivel Hills5"},
-// ];
+let data1 = [
+  {name:"Lianza, Alfie Romeo",lokal:"Nivel Hills"},
+  {name:"Lianza, Alfie Romeo2",lokal:"Nivel Hills2"},
+  {name:"Lianza, Alfie Romeo3",lokal:"Nivel Hills3"},
+  {name:"Lianza, Alfie Romeo4",lokal:"Nivel Hills4"},
+  {name:"Lianza, Alfie Romeo5",lokal:"Nivel Hills5"},
+];
 
-let data ;
+
 let colors = [
 "#9B3D47",
 "#5CA7A7",
@@ -54,9 +54,7 @@ function getQuotes() {
 
 
 
-function rmQuotes() {
-  return data.[Math.floor(Math.random() * data.quotes.length)];
-};
+
 
 function quote() {
   let rQuote = rmQuotes();
@@ -67,16 +65,20 @@ function quote() {
   // 'https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=' +
 
   $('#name').animate({ opacity: 0 }, 500, function () {
-    $(this).animate({ opacity: 1 }, 500);
-    $('#name').text(rQuote.quote);
+    $(this).animate({ opacity: 1 }, 8000);
+    $('#name').text(rQuote.name);
   });
   $('#lokal').animate({ opacity: 0 }, 500, function () {
-    $(this).animate({ opacity: 1 }, 500);
-    $('#lokal').text(rQuote.author );
+    $(this).animate({ opacity: 1 }, 8000);
+    $('#lokal').text(rQuote.lokal );
   });
 
   changeColor();
 }
+
+function rmQuotes() {
+    return data1[Math.floor(Math.random() * data1.length)];
+  };
 
 function changeColor() {
   let colorC = Math.floor(Math.random() * colors.length);
@@ -87,9 +89,11 @@ function changeColor() {
   $('.colorChange').animate({ backgroundColor: color }, 1000);
 
   
-  $('#confetti').animate({ opacity: 0 }, 1000, function () {
-    $(this).animate({ opacity: 1 }, 500);
-    confetti12();
+  $('#confetti').animate({ opacity: 0 }, 200, function () {
+    $(this).animate({ opacity: 1 }, 8000, confetti12());
+    $(this).animate({ opacity: 0 }, 10000,console.log(data1)
+    );
+    
   });
   
 }
@@ -452,6 +456,13 @@ $(document).ready(() => {
   
 
   $('#new-quote').click(() => {
-    quote();
+
+        quote();
+      
   });
+  $(document).on('keypress',function(e) {
+    if(e.which == 13) {
+        quote()
+    }
+});
 });
