@@ -1,0 +1,105 @@
+{% extends "base/layout_bo.html" %}
+{% load static %}
+
+
+{% block content %} 
+<link rel="stylesheet" type="text/css" href="{% static 'css/user/user.css' %}" />
+
+<div class="col-md-12">
+    <h1>User</h1>
+    <div class="card">
+        <div class="card-body">
+            <form id="form-search">
+                <div class="row">
+                    <div class="col">
+                        <div class="form-row">
+                            <div class="col">
+                                <input type="text" class="form-control" name="search-value" placeholder="Enter user">
+                            </div>
+                        </div>                        
+                    </div>
+                    <div class="col">
+                        <button class="btn btn-outline-primary btn-search" type="button">Search</button>
+                        <button class="btn btn-outline-secondary btn-new" type="button">New </button>
+                        <button class="btn btn-outline-success" type="button">Clear</button>                                        
+                    </div>
+                  </div>                
+            </form>
+        </div>
+    </div>
+    <div class="card mt-1">
+        <div class="card-body">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="tbl-user">
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>John</td>
+                        <td>Doe</td>
+                        <td>jdoe@gmail.com</td>
+                        <td>
+                            <button class="btn btn-outline-info" type="button">Edit</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Will</td>
+                        <td>Johnson</td>
+                        <td>will@yahoo.com</td>
+                        <td>
+                            <button class="btn btn-outline-info" type="button">Edit</button>
+                        </td>                        
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td>Shannon</td>
+                        <td>Williams</td>
+                        <td>shannon@yahoo.com</td>
+                        <td>
+                            <button class="btn btn-outline-info" type="button">Edit</button>
+                        </td>                        
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL -->
+<div class="modal" id="modal-user">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title">Modal Title</h5>
+            <button class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+            <form id="modal-form-user">
+                <div class="form-group">
+                    <label for="firstname">Firstname</label>
+                    <input class="form-control" type="text" name="firstname" placeholder="Enter Firstname">
+                </div>                
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-outline-success btn-save" type="button">Save</button>
+            <button class="btn btn-outline-secondary" data-dismiss="modal">Close</button>
+        </div>
+        </div>
+    </div>
+    </div>
+{% endblock %}
+
+{% block javascript %}
+    {{ block.super }}
+    
+    <script src="{% static 'js/user/user.js' %}"></script>
+{% endblock %}

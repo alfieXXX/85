@@ -1,0 +1,16 @@
+{% extends "base/layout_bo.html" %}
+{% load static %}
+
+
+{% block content %} 
+<link rel="stylesheet" type="text/css" href="{% static 'css/movies/movies.css' %}" />
+
+<h1>Movies</h1>
+    
+{% endblock %}
+
+{% block javascript %}
+    {{ block.super }}
+    
+    <script src="{% static 'js/movies/movies.js' %}"></script>
+{% endblock %}

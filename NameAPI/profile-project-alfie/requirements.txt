@@ -1,0 +1,8 @@
+Django==3.2.9
+djangorestframework
+mysqlclient
+requests
+flake8
+autopep8
+Pillow
+django-cors-headers
