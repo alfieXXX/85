@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import MUser
+from .models import MUser, rafflePeople
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
@@ -9,7 +9,10 @@ class UserSerializer(serializers.ModelSerializer):
                      ,'date_updated'
                 ]
 
-       
-               
+
+class rpSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = rafflePeople
+        fields = '__all__'
 
         
