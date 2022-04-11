@@ -1,10 +1,12 @@
-let data1 = [
-  {name:"Lianza, Alfie Romeo",lokal:"Nivel Hills"},
-  {name:"Lianza, Alfie Romeo2",lokal:"Nivel Hills2"},
-  {name:"Lianza, Alfie Romeo3",lokal:"Nivel Hills3"},
-  {name:"Lianza, Alfie Romeo4",lokal:"Nivel Hills4"},
-  {name:"Lianza, Alfie Romeo5",lokal:"Nivel Hills5"},
-];
+// let data1 = [
+//   {name:"Lianza, Alfie Romeo",lokal:"Nivel Hills"},
+//   {name:"Lianza, Alfie Romeo2",lokal:"Nivel Hills2"},
+//   {name:"Lianza, Alfie Romeo3",lokal:"Nivel Hills3"},
+//   {name:"Lianza, Alfie Romeo4",lokal:"Nivel Hills4"},
+//   {name:"Lianza, Alfie Romeo5",lokal:"Nivel Hills5"},
+// ];
+
+let data2
 
 
 let colors = [
@@ -22,35 +24,24 @@ let colors = [
 "#C7C293"];
 
 
+
 function getQuotes() {
   return $.ajax({
-    headers: {
-      Accept: 'application/json' },
-
-    url: 'https://gist.githubusercontent.com/camperbot/5a022b72e96c4c9585c32bf6a75f62d9/raw/e3c6895ce42069f0ee7e991229064f167fe8ccdc/quotes.json',
+    type: 'GET',
+    hearders: {
+      accept:'application/json' 
+    },
+    url: 'http://127.0.0.1:8002/user1',
     success: jsonQoutes => {
-      if (typeof jsonQoutes === 'string') {
-        data = JSON.parse(jsonQoutes);
-        console.log('data');
-        console.log(data);
-      }
-    } });
+        data2 = jsonQoutes
+      console.log(data2)
+    },
+    error: error => {
+        console.log(error)
+    }
+  });
 
 };
-
-// function getQuotes() {
-//   return $.ajax({
-//     type: 'GET',
-//     hearders: {
-//       accept:'application/json' 
-//     },
-//     url: 'http://127.0.0.1:8000/apidet/list/',
-//     success: jsonQoutes => {
-//       console.log(jsonQoutes)
-//     } 
-//   });
-
-// };
 
 
 
@@ -61,19 +52,19 @@ function quote() {
 
 
   $('#name').animate({ opacity: 0 }, 500, function () {
-    $(this).animate({ opacity: 1 }, 8000);
-    $('#name').text(rQuote.name);
+    $(this).animate({ opacity: 1 }, 500);
+    $('#name').text(rQuote.firstName);
   });
   $('#lokal').animate({ opacity: 0 }, 500, function () {
-    $(this).animate({ opacity: 1 }, 8000);
-    $('#lokal').text(rQuote.lokal );
+    $(this).animate({ opacity: 1 }, 500);
+    $('#lokal').text(rQuote.lokal);
   });
 
   changeColor();
 }
 
 function rmQuotes() {
-    return data1[Math.floor(Math.random() * data1.length)];
+    return data2[Math.floor(Math.random() * data2.length)];
   };
 
 function changeColor() {
@@ -87,8 +78,7 @@ function changeColor() {
   
   $('#confetti').animate({ opacity: 0 }, 200, function () {
     $(this).animate({ opacity: 1 }, 8000, confetti12());
-    $(this).animate({ opacity: 0 }, 10000,console.log(data1)
-    );
+    $(this).animate({ opacity: 0 }, 10000);
     
   });
   
@@ -448,8 +438,8 @@ $(document).ready(() => {
   // getQuotes().then(() => {
   //   quote();
   // });
-  // getQuotes()
-  
+  getQuotes()
+//   quote();
 
   $('#new-quote').click(() => {
 

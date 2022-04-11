@@ -68,19 +68,22 @@ body {
 #wrapper1 #wrap #quote-box #quoteAuthor {
   text-align: right;
 }
-#wrapper1 #wrap  .btn {
+#wrapper1 .btn {
   border-radius: 3px;
   font-size: 20px;
   padding: 10px;
-  margin: 20px;
+
   border: none;
   background-color: #1b1b1b;
   color: white;
   opacity: 1;
 }
-#wrapper1 #wrap #new-quote {
+#wrapper1 #new-quote {
+  position: absolute;
+  top: 75%;
   width: 110px;
   font-size: 15px;
+
 }
 #wrapper1 #wrap .btn:hover {
   opacity: 0.9;
