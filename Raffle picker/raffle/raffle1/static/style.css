@@ -111,3 +111,68 @@ body {
   position: absolute;
   overflow: hidden;
 }
+
+/* for regeistration page */
+#regb {
+  background-color: #1b1b1b;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.regf {
+  font-family: 'Barlow', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 30px 40px 30px;
+  width: 500px;
+  height: 300px;
+  background-color: #fff;
+}
+
+.regfi {
+  width: 450px;
+  height: 250px;
+  background-color: #ffffff;
+}
+
+.data {
+  margin: 10px 0px;
+}
+
+.in {
+  padding: 10px;
+  border-radius: 10px;
+  border: #1b1b1b 0.2px solid;
+  height: 40px;
+  width: 100%;
+}
+
+.nameE {
+  margin-bottom: 30px;
+}
+
+#submit1 {
+  border: none;
+  width: 100px;
+  height: 40px;
+  background-color: #1b1b1b;
+  color: #fff;
+}
+
+#lokal1 {
+  width: 100px;
+  height: 30px;
+  background-color: rgb(255, 255, 255);
+}
+
+#submit1:hover {
+  opacity: 80%;
+}
+
+
+
+

@@ -5,3 +5,6 @@ from django.shortcuts import render
 
 def home(request):
     return render(request, "index.html")
+
+def reg(request):
+    return render(request, "registration.html")

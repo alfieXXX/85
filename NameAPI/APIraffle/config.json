@@ -1,0 +1,12 @@
+{
+	"DEFAULT_DB_NAME" : "85thraffle",
+	"DEFAULT_DB_HOST" : "localhost",
+	"DEFAULT_DB_PORT" : "3306",
+	"DEFAULT_DB_USER" : "alfie",
+	"DEFAULT_DB_PASS" : "alfie",
+	"DEBUG_MODE" : "True",    
+	"DOMAIN_HOST" : "localhost",    
+	"DOMAIN_IP" : "127.0.0.1",    
+    "SECRET_KEY" : "django-insecure-au9-+-!y3okt^w(0!j^1273gzsg%ilbe#if$16mi7xn)-907qh"
+
+}

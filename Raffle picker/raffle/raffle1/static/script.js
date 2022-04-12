@@ -43,9 +43,25 @@ function getQuotes() {
 
 };
 
-
-
-
+function register() {
+    return $.ajax({
+        type: 'POST',
+        hearders: {
+          accept:'application/json' 
+        },
+        url: 'http://127.0.0.1:8002/user1',
+        data: {
+            "fName": $('#fname').val(),
+            "lName": $('#lname').val(),
+            "lokal": $('#lokal1 option:selected').text()
+        },
+        success: jsonQoutes => {
+            $('#fname').val('')
+            $('#lname').val('')
+            $('#lokal1').val('Lokal')
+        }
+      });
+}
 
 function quote() {
   let rQuote = rmQuotes();
@@ -53,7 +69,7 @@ function quote() {
 
   $('#name').animate({ opacity: 0 }, 500, function () {
     $(this).animate({ opacity: 1 }, 500);
-    $('#name').text(rQuote.firstName);
+    $('#name').text(rQuote.fName);
   });
   $('#lokal').animate({ opacity: 0 }, 500, function () {
     $(this).animate({ opacity: 1 }, 500);
@@ -61,6 +77,29 @@ function quote() {
   });
 
   changeColor();
+}
+
+function rm() {
+    let random1 = setInterval(() => {
+    let rQuote = rmQuotes();
+
+    $('#name').text(rQuote.lName+', '+rQuote.fName);
+    // $('#name').animate({ opacity: 0 }, 500, function () {
+    //     $(this).animate({ opacity: 1 }, 500);
+    //     $('#name').text(rQuote.firstName);
+    // });
+    $('#lokal').text(rQuote.lokal);
+
+    // $('#lokal').animate({ opacity: 0 }, 500, function () {
+    //     $(this).animate({ opacity: 1 }, 500);
+    //     $('#lokal').text(rQuote.lokal);
+    // });
+    },100)
+
+    setTimeout(() => {
+        clearInterval(random1)
+    }, 5000)
+    changeColor()
 }
 
 function rmQuotes() {
@@ -76,7 +115,7 @@ function changeColor() {
   $('.colorChange').animate({ backgroundColor: color }, 1000);
 
   
-  $('#confetti').animate({ opacity: 0 }, 200, function () {
+  $('#confetti').animate({ opacity: 0 }, 5000, function () {
     $(this).animate({ opacity: 1 }, 8000, confetti12());
     $(this).animate({ opacity: 0 }, 10000);
     
@@ -442,13 +481,17 @@ $(document).ready(() => {
 //   quote();
 
   $('#new-quote').click(() => {
-
-        quote();
-      
+        rm();
   });
+
+  $('#submit1').click(() => {
+    register();
+});
+ 
+
   $(document).on('keypress',function(e) {
     if(e.which == 13) {
-        quote()
+        rm()
     }
 });
 });
