@@ -84,16 +84,10 @@ function rm() {
     let rQuote = rmQuotes();
 
     $('#name').text(rQuote.lName+', '+rQuote.fName);
-    // $('#name').animate({ opacity: 0 }, 500, function () {
-    //     $(this).animate({ opacity: 1 }, 500);
-    //     $('#name').text(rQuote.firstName);
-    // });
+ 
     $('#lokal').text(rQuote.lokal);
 
-    // $('#lokal').animate({ opacity: 0 }, 500, function () {
-    //     $(this).animate({ opacity: 1 }, 500);
-    //     $('#lokal').text(rQuote.lokal);
-    // });
+
     },100)
 
     setTimeout(() => {
